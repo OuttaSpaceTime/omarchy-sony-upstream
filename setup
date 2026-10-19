@@ -136,7 +136,7 @@ check_and_install_dependencies() {
 
 build_project() {
   info "Configuring project with CMake and Ninja..."
-  cmake -B "$ROOT_DIR/build" -G Ninja
+  cmake -S "$ROOT_DIR" -B "$ROOT_DIR/build" -G Ninja
   info "Building daemon and CLI targets..."
   cmake --build "$ROOT_DIR/build"
   success "Build completed successfully."
